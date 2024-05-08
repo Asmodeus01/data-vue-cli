@@ -29,20 +29,26 @@ module.exports = class Template {
   }
 
   // 新增模板，插入键值对，key存在则覆盖
-  add (key, val, callback) {
+  add (type,key, val, callback) {
     let tplObj = this.getTemplate()
-    tplObj[key] = val
+    if(!tplObj[type]) tplObj[type]={}
+    tplObj[type][key] = val
+
     fs.writeFile(`${__dirname}/../template.json`, JSON.stringify(tplObj), 'utf-8', callback)
   }
 
   // 删除模板，删除键值对，key不存在则返回错误
-  delete (key, callback) {
+  delete (type, key, callback) {
     let tplObj = this.getTemplate()
-    if (!tplObj[key]) {
+    if(!tplObj[type]){
+      callback('模板类型不存在！')
+      return
+    }
+    if (!tplObj[type][key]) {
       callback('模板不存在！')
       return
     }
-    delete tplObj[key]
+    delete tplObj[type][key]
     fs.writeFile(`${__dirname}/../template.json`, JSON.stringify(tplObj), 'utf-8', callback)
   }
 }

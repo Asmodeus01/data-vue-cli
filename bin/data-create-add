@@ -5,6 +5,17 @@ const chalk = require('chalk')
 const Template = require('../utils/Template')
 
 const question = [{
+  name: "type",
+  type: 'input',
+  message: "请输入模板类型",
+  validate(val) {
+    if (val === '') {
+      return '模板类型不能为空!'
+    } else {
+      return true
+    }
+  }
+},{
   name: "templateName",
   type: 'input',
   message: "请输入模板名称",
@@ -16,6 +27,7 @@ const question = [{
     }
   }
 },
+
 {
   name: "templateUrl",
   type: 'input',
@@ -36,6 +48,7 @@ inquirer
     // 新增
     const template = new Template()
     template.add(
+        answers.type,
       answers.templateName,
       answers.templateUrl,
       err => {
