@@ -19,7 +19,7 @@ module.exports = class Template {
   // 返回模板名列表
   getNameList () {
     let tplObj = this.getTemplate()
-    return Object.keys(tplObj)
+    return tplObj
   }
 
   // 根据模板名称返回模板url

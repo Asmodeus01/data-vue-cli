@@ -2,7 +2,7 @@
 const Template = require('../utils/Template')
 
 const template = new Template()
-const list = template.getNameList()
+const list = Object.keys(template.getNameList())
 
 for (const item of list) {
   console.log('  ' + item);

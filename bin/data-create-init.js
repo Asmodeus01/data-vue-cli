@@ -20,13 +20,25 @@ const question = [{
     }
   }
 },
-{
-  type: 'list',
-  message: '请选择模板',
-  name: 'tplName',
-  choices: tplList
-}
+
+  {
+    type: 'list',
+    name: 'type',
+    message: '请选择模板类型',
+    choices: Object.keys(tplList)
+  }
 ]
+
+for (let i = 0; i < Object.keys(tplList).length; i++) {
+  let key= Object.keys(tplList)[i]
+  question.push({
+    type: 'list',
+    message: `请选择模板`,
+    name: 'tplName',
+    choices: Object.keys(tplList[key]),
+    when:answers=>answers.type== key
+  })
+}
 
 
 inquirer

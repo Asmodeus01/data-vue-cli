@@ -1,6 +1,6 @@
 {
   "name": "dtcreate",
-  "version": "1.2.1",
+  "version": "1.2.401",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   "bin": {
     "dtcreate": "bin/data-create",
     "dtcreate-vue": "bin/data-create-vue",
-    "dtcreate-init": "bin/data-create-vue",
+    "dtcreate-init": "bin/data-create-init",
     "dtcreate-list": "bin/data-create-list",
     "dtcreate-add": "bin/data-create-add",
     "dtcreate-delete": "bin/data-create-delete"
