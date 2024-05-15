@@ -9,6 +9,6 @@
     "dt-admin-vue3": "https://gitlab.com:yanxiaos/dtcreate-vue#dt-admin-vue3"
   },
   "VitePress": {
-    "VitePress": "https://github.com:Asmodeus01/vitepress-template#main"
+    "VitePress": "https://github.com:Asmodeus01/vitepress-template#main",
   }
 }

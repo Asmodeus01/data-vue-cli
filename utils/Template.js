@@ -23,9 +23,9 @@ module.exports = class Template {
   }
 
   // 根据模板名称返回模板url
-  getTempUrl (tempName) {
+  getTempUrl ({type, tplName}) {
     const template = this.getTemplate()
-    return template[tempName]
+    return template[type][tplName]
   }
 
   // 新增模板，插入键值对，key存在则覆盖

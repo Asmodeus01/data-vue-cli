@@ -44,10 +44,12 @@ for (let i = 0; i < Object.keys(tplList).length; i++) {
 inquirer
     .prompt(question)
     .then(answers => {
+        const {type,appName,tplName}=answers
+        console.log(template.getTempUrl({type,tplName}),'返回的')
         // 回调函数，answers 就是用户输入的内容，是个对象
         downloadTemplate({
-            appName: answers.appName,
-            url: template.getTempUrl(answers.tplName),
+            appName,
+            url: template.getTempUrl({type, tplName}),
         })
     })
     .catch((error) => {
